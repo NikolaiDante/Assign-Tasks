@@ -19,7 +19,12 @@
                     
                     "app/helpers.php"
 
-                    ]
+                    ],
+                "psr-0":{
+                
+                    "Acme": "app/"
+                
+                }
 	},
 	"scripts": {
 		"post-install-cmd": [

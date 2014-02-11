@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-
+<div class="col-xs-6">
 <h1>All Tasks</h1>
 <ul class="list-group">
 @foreach($tasks as $task)
@@ -12,7 +12,9 @@
 </li>
 @endforeach
 </ul>
+</div>
 
+<div class="col-md-6">
 @if(isset($users))
 
 <h3>Add New Task</h3>
@@ -20,6 +22,7 @@
 
 @endif
 
+</div>
 @stop
 
 
