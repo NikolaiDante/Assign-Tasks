@@ -7,11 +7,19 @@
 @foreach($tasks as $task)
 
 <li class="list-group-item">
-<img src="{{gravatar_url($task->user->email)}}" alt="{{$task->user->email}}"/>
+<a href="/{{$task->user->username}}/tasks"><img src="{{gravatar_url($task->user->email)}}" alt="{{$task->user->email}}"/></a>
 {{link_to_path($task)}}
 </li>
 @endforeach
 </ul>
+
+@if(isset($users))
+
+<h3>Add New Task</h3>
+@include('tasks.partials._form')
+
+@endif
+
 @stop
 
 

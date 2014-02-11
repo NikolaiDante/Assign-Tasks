@@ -7,7 +7,9 @@ class TasksController extends BaseController
     {
         $tasks = Task::all();
 
-        return View::make('tasks.index', compact('tasks'));
+        $users = User::lists('username', 'id');
+
+        return View::make('tasks.index', compact('tasks', 'users'));
     }
 
     public function show($id)
@@ -19,6 +21,22 @@ class TasksController extends BaseController
 
     }
 
+    public function store()
+    {
+
+        $input = Input::all();
+
+        Task::create([
+
+            'title' => $input['title'],
+            'body' => $input['body'],
+            'user_id' => $input['assign']
+
+            ]);
+
+        return Redirect::home();
+
+    }
 
 }
 
